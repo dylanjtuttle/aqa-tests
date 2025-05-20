@@ -1603,7 +1603,7 @@
 			<variation>$(TEST_VARIATION_DUMP) Mode1000</variation>
 		</variations>
 		<command>$(JAVA_COMMAND) -Xmx512m -jar $(Q)$(TEST_RESROOT)$(D)jtreg$(D)lib$(D)jtreg.jar$(Q) \
-	$(JTREG_BASIC_OPTIONS) $(JDK_NATIVE_OPTIONS) -vmoptions:$(Q)-Xmx1540m $(JVM_OPTIONS) $(VMOPTION_HEADLESS) $(-Xjit:{java/lang/StringCoding.decodeUTF8}\(traceFull,log=log_$1.txt\) -Xdump:system:events=throw+systhrow,filter=java/lang/NullPointerException#java/util/Arrays.copyOfRange)$(Q) \
+	$(JTREG_BASIC_OPTIONS) $(JDK_NATIVE_OPTIONS) -vmoptions:$(Q)-Xmx1540m $(JVM_OPTIONS) $(VMOPTION_HEADLESS) $(-Xjit:{*StackTraceElement.toString*}\(traceFull,log=log_StackTraceElement_toString.txt\),{*StringCoding.decode*}\(traceFull,log=log_StringCoding_decode.txt\),{*UnixPath.toString*}\(traceFull,log=log_UnixPath_toString.txt\),{*SocketInputStream.read*}\(traceFull,log=log_SocketInputStream_read.txt\),{*StreamDecoder.implRead*}\(traceFull,log=log_StreamDecoder_implRead.txt\),{*StreamDecoder.read*}\(traceFull,log=log_StreamDecoder_read.txt\) -Xdump:system:events=throw+systhrow,filter=java/lang/NullPointerException#java/util/Arrays.copyOfRange)$(Q) \
 	$(TIMEOUT_HANDLER) \
 	-w $(Q)$(REPORTDIR)$(D)work$(Q) \
 	-r $(Q)$(REPORTDIR)$(D)report$(Q) \
