@@ -898,7 +898,7 @@
 		<command>$(JAVA_COMMAND) -Xmx768m -jar $(Q)$(TEST_RESROOT)$(D)jtreg$(D)lib$(D)jtreg.jar$(Q) \
 	$(JTREG_BASIC_OPTIONS) $(JDK_NATIVE_OPTIONS) \
 	-Xjit:verbose,vlog=$(REPORTDIR)$(D)work$(D)vlog \
-	-Xdump:system+jit:events=throw+systhrow,filter=java/lang/NullPointerException#java.base/java.lang.String.newStringUTF8NoRepl \
+	-Xdump:system+jit:events=throw+systhrow,filter=java/lang/NullPointerException#java.base/java.util.zip.ZipFile.getZipEntry \
  	-Xdump:directory=$(REPORTDIR)$(D)work \
 	-vmoptions:$(Q)-Xmx1540m $(JVM_OPTIONS) $(VMOPTION_HEADLESS)$(Q) \
 	$(TIMEOUT_HANDLER) \
